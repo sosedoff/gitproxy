@@ -34,7 +34,7 @@ int main(int argc, const char *argv[]) {
     return 1; 
   }
 
-  if (strlen(EXEC_COMMAND) == 0) {
+  if (strlen(GITPROXY_EXEC) == 0) {
     fprintf(stderr, "No replace command defined\n");
     free(request);
     return 1;
@@ -51,6 +51,6 @@ int main(int argc, const char *argv[]) {
 
   free(request);
 
-  int exitcode = execlp(EXEC_COMMAND, EXEC_COMMAND, EXEC_ARG, 0);
+  int exitcode = execlp(GITPROXY_EXEC, GITPROXY_EXEC, GITPROXY_EXEC_ARG, 0);
   return exitcode;
 }

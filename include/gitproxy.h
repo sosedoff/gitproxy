@@ -1,12 +1,10 @@
 #define GITPROXY_DEBUG 1
+#define GITPROXY_EXEC ""
+#define GITPROXY_EXEC_ARG ""
 
 #define GIT_USER "git"
 #define GIT_HOME "/home/git"
 #define GIT_ROOT "/home/git/repositories"
-
-#define EXEC_COMMAND ""
-#define EXEC_ARG ""
-
 #define REGEX_GIT_COMMAND "^(git[-|\\s]upload-pack|git[-|\\s]upload-archive|git[-|\\s]receive-pack) '(.*)'$"
 
 typedef struct {
