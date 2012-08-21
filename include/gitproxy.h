@@ -1,3 +1,5 @@
+#define GITPROXY_DEBUG 1
+
 #define GIT_USER "git"
 #define GIT_HOME "/home/git"
 #define GIT_ROOT "/home/git/repositories"

@@ -64,12 +64,14 @@ g_request* get_request(char* command) {
 }
 
 unsigned int validate_session(g_session session) {
-  fprintf(stderr, "Session:\n");
-  fprintf(stderr, " -> User: %s\n",           session.user);
-  fprintf(stderr, " -> Home: %s\n",           session.home);
-  fprintf(stderr, " -> SSH Client: %s\n",     session.ssh_client);
-  fprintf(stderr, " -> SSH Connection: %s\n", session.ssh_connection);
-  fprintf(stderr, " -> SSH Command: %s\n",    session.ssh_command);
+  if (GITPROXY_DEBUG == 1) {
+    fprintf(stderr, "Session:\n");
+    fprintf(stderr, " -> User: %s\n",           session.user);
+    fprintf(stderr, " -> Home: %s\n",           session.home);
+    fprintf(stderr, " -> SSH Client: %s\n",     session.ssh_client);
+    fprintf(stderr, " -> SSH Connection: %s\n", session.ssh_connection);
+    fprintf(stderr, " -> SSH Command: %s\n",    session.ssh_command);
+  }
   
   if (strcmp(session.user, GIT_USER) != 0) {
     fprintf(stderr, "Error: Invalid user => %s\n", session.user);
